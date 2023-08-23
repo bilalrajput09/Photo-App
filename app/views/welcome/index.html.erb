@@ -1,5 +1,6 @@
 <% if current_user %>
   <h3>Welcome: <%= current_user.email %></h3>
+  <h4>Checkout recent images shared by others: <%= link_to "Feed", images_path, class: "btn btn-dark"%></h4>
 <% else %>
   <div class="jumbotron">
     <h2>Welcome to the Photo App!</h2>
