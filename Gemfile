@@ -18,6 +18,8 @@ gem "puma", "~> 5.0"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'carrierwave', '~> 3.0'
+gem 'mini_magick'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
