@@ -1,16 +1,22 @@
-<div id="<%= dom_id image %>">
-    <p>
-      <strong>Name:</strong>
-      <%= image.name %>
-    </p>
-
-    <p>
-      <%= image_tag(image.picture.url, size: "300x300") if image.picture? %>
-    </p>
-
-    <p>
-      <strong>User:</strong>
-      <%= image.user_id %>
-    </p>
-
+<div class="card text-bg-light mb-3 mx-auto" style="width: 30rem;">
+  <%= image_tag(image.picture.url, size: "300x300", class:"card-img-top") if image.picture? %>
+  <div class="card-body">
+    <h5 class="card-title"><%= image.name %></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">User: <%= image.user_id %></li>
+  </ul>
+  <div class="card-body">
+    <% if request.path != "/images/#{image.id}" %>
+      <%= link_to "Show this image", image, class: "btn btn-primary" %>
+      <% else %>
+        <div class="d-flex align-items-center justify-content-center mt-4 mb-4">
+          <%= link_to "Edit this image", edit_image_path(@image), class: "btn btn-secondary me-2" %>
+          <%= link_to "Back to images", images_path, class: "btn btn-primary  me-2" %>
+          <%= button_to "Destroy this image", @image, method: :delete, class: "btn btn-warning" %>
+        </div>
+    <% end %>
+  </div>
+</div>
+
