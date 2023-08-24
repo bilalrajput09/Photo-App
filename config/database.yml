@@ -86,5 +86,5 @@ production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
   database: photo_app_production
-  username: finance_tracker
-  password: <%= ENV["FINANCE_TRACKER_DATABASE_PASSWORD"] %>
+  username: photo_app
+  password: <%= ENV["PHOTO_APP_DATABASE_PASSWORD"] %>
